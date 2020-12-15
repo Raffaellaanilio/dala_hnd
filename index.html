@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Honduras ETA 2020</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #map {
+            position: absolute;
+            top: 10%;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        #toc {
+            top: 12%;
+            left: 1%;
+            height: 80vh;
+            position: absolute;
+            width: 20%;
+            padding-top: 10%;
+            background-color: rgba(255, 255, 255, 1);
+            padding: 15px;
+            border-radius: 1%;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row" style="height: 10vh;">
+        <div class="col-2" style="padding: 10px 20px;">
+            <img src="logo-cepal.png" height="50px">
+        </div>
+        <div class="col-10 text-center">
+            <h5>Reconstrucción Huracán ETA</h5>
+            <p>Honduras - 2020</p>
+        </div>
+
+    </div>
+    <div id="map"></div>
+    <div id="toc">
+        <div class="row">
+            <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox" onchange="encendido('area_afectada')" checked></div>
+            <div class="col-7" style="font-size: small;line-height: 1;">Zonas afectadas</div>
+            <div class="col-3" style="font-size: small;line-height: 1;">6/11</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox" onchange="encendido('municipios')"></div>
+            <div class="col-7" style="font-size: small;line-height: 1;">Porcentaje de viviendas en mal estado por municipio
+            </div>
+            <div class="col-3" style="font-size: small;line-height: 1;">Año 2013</div>
+        </div>
+    </div>
+
+</body>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaGNhc3RlbGxhcm8iLCJhIjoiY2lrazJvZHFrMDl1eXYwa202Z2Njczk1eiJ9.fIBpy-XcIN0kKSuIx6oReA';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [-87.133, 14.615], // starting position [lng, lat]/
+        zoom: 6.8 // starting zoom
+    });
+    map.addControl(new mapboxgl.NavigationControl());
+
+    map.addControl(
+        new mapboxgl.GeolocateControl({
+            positionOptions: {
+                enableHighAccuracy: true
+            },
+            trackUserLocation: true
+        })
+    );
+
+    map.on('load', function() {
+        var url_muni = './municipios.geojson';
+        map.addSource('municipios', {
+            type: 'geojson',
+            data: url_muni
+        });
+
+        map.addLayer({
+            'id': 'municipios',
+            'type': 'fill',
+            'source': 'municipios',
+            'layout': {
+                'visibility': 'none'
+            },
+            'paint': {
+                'fill-color': [
+                    "step",
+                    ['get', 'porc_nbi'],
+                    "#fff",
+                    0, "#fff5f0",
+                    1.2, "#fdbea5",
+                    3.3, "#fc7050",
+                    5.6, "#d42020",
+                    8.4, "#67000d",
+                    15.8, "#67000d",
+                ],
+                'fill-opacity': 0.8
+            }
+        });
+
+
+        map.on('click', 'municipios', function(e) {
+            var nombre = e.features[0].properties.NOMBRE;
+            var porc_nbi = e.features[0].properties.porc_nbi;
+            var innerPopup = '<div>Nombre: <b>' + nombre + '</b><br>Porcentaje de viviendas: ' + porc_nbi + '</div>';
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(innerPopup)
+                .addTo(map);
+        });
+        map.on('mouseenter', 'municipios', function() {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'municipios', function() {
+            map.getCanvas().style.cursor = '';
+        });
+
+
+        var url_area_afectada = './area_afectada.geojson';
+        map.addSource('area_afectada', {
+            type: 'geojson',
+            data: url_area_afectada
+        });
+
+        map.addLayer({
+            'id': 'area_afectada',
+            'type': 'fill',
+            'source': 'area_afectada',
+            'layout': {
+                'visibility': 'visible'
+            },
+            'paint': {
+                'fill-color': 'blue',
+                'fill-opacity': 0.8
+            }
+        });
+        
+        map.on('mouseenter', 'area_afectada', function() {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'area_afectada', function() {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+    encendido = function encendido(x) {
+
+        //y = document.getElementById('icono_' + x);
+
+        //$(y).toggle();
+
+        var visibility = map.getLayoutProperty(x, 'visibility');
+
+        // toggle layer visibility by changing the layout object's visibility property
+        if (visibility === 'visible') {
+            map.setLayoutProperty(x, 'visibility', 'none');
+            this.className = '';
+        } else {
+            this.className = 'active';
+            map.setLayoutProperty(x, 'visibility', 'visible');
+        }
+    };
+</script>
+
+</html>
