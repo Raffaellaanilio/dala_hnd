@@ -92,12 +92,14 @@
                 <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
                 <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
             </div>
+            <div class="row row_leyenda" id="leyenda_estado_tormenta_eta" style="display:none;"></div>
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('velocidad_viento_eta')"></div>
                 <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
                 <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
             </div>
+            <div class="row row_leyenda" id="leyenda_velocidad_viento_eta" style="display:none;"></div>
             <h6>Huracán Iota</h6>
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -111,11 +113,13 @@
                 <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
                 <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
             </div>
+            <div class="row row_leyenda" id="leyenda_estado_tormenta_iota" style="display:none;"></div>
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('velocidad_tormenta_iota')"></div>
+                        onchange="encendido('velocidad_viento_iota')"></div>
                 <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
                 <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+                <div class="row row_leyenda" id="leyenda_velocidad_viento_iota" style="display:none;"></div>
             </div>
         </div>
             <div data-toggle="collapse" href="#colapsarc2" class="col-12 row_titulo">C2 Población afectada</div>
@@ -287,10 +291,10 @@
             });
 
 
-            var url_estado_tormenta_eta = './trayectoria_eta.geojson';
+            var url_trayectoria_eta = './trayectoria_eta.geojson';
             map.addSource('trayectoria_eta', {
                 type: 'geojson',
-                data: url_estado_tormenta_eta
+                data: url_trayectoria_eta
             });
 
             map.addLayer({
@@ -330,6 +334,20 @@
                 type: 'geojson',
                 data: url_velocidad_viento_iota
             });
+
+            var leyenda_velocidad_viento_iota = [["~60 km/hr",
+                "#f1d64b"],
+            ["~ 90 km/hr",
+                "#34e19f"],
+            ["~ 120 km/hr",
+                "#721f81"],
+           ];
+
+           $.each(leyenda_velocidad_viento_iota, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_velocidad_viento_iota').append(registro);
+            })
+
             map.addLayer({
                 'id': 'velocidad_viento_iota',
                 'type': 'fill',
@@ -354,6 +372,20 @@
                 type: 'geojson',
                 data: url_velocidad_viento_eta
             });
+
+            var leyenda_velocidad_viento_eta = [["~60 km/hr",
+                "#f1d64b"],
+            ["~ 90 km/hr",
+                "#34e19f"],
+            ["~ 120 km/hr",
+                "#721f81"],
+           ];
+
+            $.each(leyenda_velocidad_viento_eta, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_velocidad_viento_eta').append(registro);
+            })
+
             map.addLayer({
                 'id': 'velocidad_viento_eta',
                 'type': 'fill',
@@ -378,15 +410,31 @@
                 type: 'geojson',
                 data: url_estado_tormenta_iota
             });
+
+            var leyenda_estado_tormenta_iota = [["Ciclón Extratropical",
+                "#fc8761"],
+            ["Depresión Tropical",
+                "#b63679"],
+            ["Tormenta Tropical",
+                "#50127b"],
+            ["Huracán",
+                "#000004"],
+           ];
+
+            $.each(leyenda_estado_tormenta_iota, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_estado_tormenta_iota').append(registro);
+            })
+
             map.addLayer({
                 'id': 'estado_tormenta_iota',
-                'type': 'fill',
+                'type': 'circle',
                 'source': 'estado_tormenta_iota',
                 'layout': {
                     'visibility': 'none'
                 },
                 'paint': {
-                    'fill-color': [
+                    'circle-color': [
                         "match",
                         ["get", "STORMTYPE"],
                         "EX",
@@ -397,6 +445,8 @@
                         "#50127b",
                         "HU",
                         "#000004",
+                        "LO",
+                        "#fcfdbf",
                         "#2242cf"
                     ]
                 }
@@ -407,15 +457,31 @@
                 type: 'geojson',
                 data: url_estado_tormenta_eta
             });
+
+            var leyenda_estado_tormenta_eta = [["Ciclón Extratropical",
+                "#fc8761"],
+            ["Depresión Tropical",
+                "#b63679"],
+            ["Tormenta Tropical",
+                "#50127b"],
+            ["Huracán",
+                "#000004"],
+           ];
+
+            $.each(leyenda_estado_tormenta_eta, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_estado_tormenta_eta').append(registro);
+            })
+
             map.addLayer({
                 'id': 'estado_tormenta_eta',
-                'type': 'fill',
+                'type': 'circle',
                 'source': 'estado_tormenta_eta',
                 'layout': {
                     'visibility': 'none'
                 },
                 'paint': {
-                    'fill-color': [
+                    'circle-color': [
                         "match",
                         ["get", "STORMTYPE"],
                         "EX",
