@@ -47,6 +47,10 @@
             font-weight: bold;
         }
 
+        .row_titulo:hover {
+            background-color:#eaebed;
+        }
+
         .row {
             width: -webkit-fill-available;
         }
@@ -73,7 +77,49 @@
     <div id="map"></div>
     <div id="toc">
         <div class="row">
-            <div class="col-12 row_titulo">C2 Población afectada</div>
+            <div data-toggle="collapse" href="#colapsarc1" class="col-12 row_titulo">C1 Eventos</div>
+        <div id="colapsarc1" class="collapse">
+            <h6>Huracán Eta</h6>
+            <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('trayectoria_eta')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Trayectoria</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+            </div>
+            <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('estado_tormenta_eta')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+            </div>
+            <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('velocidad_viento_eta')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+            </div>
+            <h6>Huracán Iota</h6>
+            <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('trayectoria_iota')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Trayectoria</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+            </div>
+            <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('estado_tormenta_iota')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+            </div>
+            <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('velocidad_tormenta_iota')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+            </div>
+        </div>
+            <div data-toggle="collapse" href="#colapsarc2" class="col-12 row_titulo">C2 Población afectada</div>
+            <div id="colapsarc2" class="collapse">
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('area_afectada')" checked></div>
@@ -87,7 +133,9 @@
                 </div>
                 <div class="col-3" style="font-size: small;line-height: 1;">27/11/2020</div>
             </div>
-            <div class="col-12 row_titulo">C3 Educación</div>
+        </div>
+            <div data-toggle="collapse" href="#colapsarc3" class="col-12 row_titulo">C3 Educación</div>
+            <div id="colapsarc3" class="collapse">
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('establecimientos_educativos')"></div>
@@ -95,7 +143,9 @@
                 </div>
                 <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
             </div>
-            <div class="col-12 row_titulo">C4 Salud</div>
+        </div>
+            <div data-toggle="collapse" href="#colapsarc4" class="col-12 row_titulo">C4 Salud</div>
+            <div id="colapsarc4" class="collapse">
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('unidades_salud')"></div>
@@ -103,7 +153,9 @@
                 </div>
                 <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
             </div>
-            <div class="col-12 row_titulo">C5 Vivienda</div>
+        </div>
+            <div data-toggle="collapse" href="#colapsarc5" class="col-12 row_titulo">C5 Vivienda</div>
+            <div id="colapsarc5" class="collapse">
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('municipios')"></div>
@@ -112,10 +164,12 @@
                 </div>
                 <div class="col-3" style="font-size: small;line-height: 1;">Año 2013</div>
             </div>
-            <div class="col-12 row_titulo">C6 Agua y saneamiento</div>
-            <div class="col-12 row_titulo">C7 Electricidad</div>
-            <div class="col-12 row_titulo">C8 Telecomunicaciones</div>
-            <div class="col-12 row_titulo">C9 Transporte y Vialidad</div>
+        </div>
+            <div data-toggle="collapse" href="#colapsarc6" class="col-12 row_titulo">C6 Agua y saneamiento</div>
+            <div data-toggle="collapse" href="#colapsarc7" class="col-12 row_titulo">C7 Electricidad</div>
+            <div data-toggle="collapse" href="#colapsarc8" class="col-12 row_titulo">C8 Telecomunicaciones</div>
+            <div data-toggle="collapse" href="#colapsarc9" class="col-12 row_titulo">C9 Transporte y Vialidad</div>
+            <div id="colapsarc9" class="collapse">
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('afectaciones_vial_investh')"></div>
@@ -123,7 +177,9 @@
                 </div>
                 <div class="col-3" style="font-size: small;line-height: 1;">25/11/2020</div>
             </div>
-            <div class="col-12 row_titulo">C10 Agricultura</div>
+        </div>
+            <div data-toggle="collapse" href="#colapsarc10" class="col-12 row_titulo">C10 Agricultura</div>
+            <div id="colapsarc10" class="collapse">
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('cobertura_inundada_agricultura')"></div>
@@ -131,10 +187,11 @@
                 </div>
                 <div class="col-3" style="font-size: small;line-height: 1;">FAO</div>
             </div>
+        </div>
             <div class="row row_leyenda" id="leyenda_cobertura_inundada_agricultura" style="display:none;"></div>
-            <div class="col-12 row_titulo">C11 Turismo y comercio</div>
-            <div class="col-12 row_titulo">C12 Medio Ambiente</div>
-            <div class="col-12 row_titulo">C13 Impacto macroeconómico</div>
+            <div data-toggle="collapse" href="#colapsarc11" class="col-12 row_titulo">C11 Turismo y comercio</div>
+            <div data-toggle="collapse" href="#colapsarc12" class="col-12 row_titulo">C12 Medio Ambiente</div>
+            <div data-toggle="collapse" href="#colapsarc13" class="col-12 row_titulo">C13 Impacto macroeconómico</div>
         </div>
     </div>
 
@@ -203,7 +260,6 @@
                 map.getCanvas().style.cursor = '';
             });
 
-
             var url_area_afectada = './area_afectada.geojson';
             map.addSource('area_afectada', {
                 type: 'geojson',
@@ -228,6 +284,151 @@
             // Change it back to a pointer when it leaves.
             map.on('mouseleave', 'area_afectada', function () {
                 map.getCanvas().style.cursor = '';
+            });
+
+
+            var url_estado_tormenta_eta = './trayectoria_eta.geojson';
+            map.addSource('trayectoria_eta', {
+                type: 'geojson',
+                data: url_estado_tormenta_eta
+            });
+
+            map.addLayer({
+                'id': 'trayectoria_eta',
+                'type': 'line',
+                'source': 'trayectoria_eta',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                 'line-color': 'black',
+                 'line-width': 3,
+             }
+         }); 
+
+
+            var url_trayectoria_iota = './trayectoria_iota.geojson';
+            map.addSource('trayectoria_iota', {
+                type: 'geojson',
+                data: url_trayectoria_iota
+            });
+            map.addLayer({
+                'id': 'trayectoria_iota',
+                'type': 'line',
+                'source': 'trayectoria_iota',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                 'line-color': 'black',
+                 'line-width': 3,
+             }
+         }); 
+                    
+            var url_velocidad_viento_iota = './velocidad_viento_iota.geojson';
+            map.addSource('velocidad_viento_iota', {
+                type: 'geojson',
+                data: url_velocidad_viento_iota
+            });
+            map.addLayer({
+                'id': 'velocidad_viento_iota',
+                'type': 'fill',
+                'source': 'velocidad_viento_iota',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'fill-color': [
+                        "step", ['get', 'RADII'],
+                        "#fff",
+                        34, "#f1d64b",
+                        50, "#34e19f",
+                        64, "#721f81",
+                    ],
+                    'fill-opacity': 0.8,
+                }
+            });
+
+            var url_velocidad_viento_eta = './velocidad_viento_eta.geojson';
+            map.addSource('velocidad_viento_eta', {
+                type: 'geojson',
+                data: url_velocidad_viento_eta
+            });
+            map.addLayer({
+                'id': 'velocidad_viento_eta',
+                'type': 'fill',
+                'source': 'velocidad_viento_eta',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'fill-color': [
+                        "step", ['get', 'RADII'],
+                        "#fff",
+                        34, "#f1d64b",
+                        50, "#34e19f",
+                        64, "#721f81",
+                    ],
+                    'fill-opacity': 0.8,
+                }
+            });
+         
+         var url_estado_tormenta_iota = './estado_tormenta_iota.geojson';
+            map.addSource('estado_tormenta_iota', {
+                type: 'geojson',
+                data: url_estado_tormenta_iota
+            });
+            map.addLayer({
+                'id': 'estado_tormenta_iota',
+                'type': 'fill',
+                'source': 'estado_tormenta_iota',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'fill-color': [
+                        "match",
+                        ["get", "STORMTYPE"],
+                        "EX",
+                        "#fc8761",
+                        "TD",
+                        "#b63679",
+                        "TS",
+                        "#50127b",
+                        "HU",
+                        "#000004",
+                        "#2242cf"
+                    ]
+                }
+            });           
+           
+            var url_estado_tormenta_eta = './estado_tormenta_eta.geojson';
+            map.addSource('estado_tormenta_eta', {
+                type: 'geojson',
+                data: url_estado_tormenta_eta
+            });
+            map.addLayer({
+                'id': 'estado_tormenta_eta',
+                'type': 'fill',
+                'source': 'estado_tormenta_eta',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'fill-color': [
+                        "match",
+                        ["get", "STORMTYPE"],
+                        "EX",
+                        "#fc8761",
+                        "TD",
+                        "#b63679",
+                        "TS",
+                        "#50127b",
+                        "HU",
+                        "#000004",
+                        "#2242cf"
+                    ]
+                }
             });
 
             var url_albergue = './albergues.geojson';
@@ -321,6 +522,7 @@
                 "#8525cd"],
             ["Piña",
                 "#58d881"]];
+
             $.each(leyenda_cobertura_inundada_agricultura, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
                 $('#leyenda_cobertura_inundada_agricultura').append(registro);

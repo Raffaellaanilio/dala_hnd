@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "trayectoria_iota",
+"features": [
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "LO", "SS": 0.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -70.9, 15.5 ], [ -71.9, 15.3 ], [ -72.7, 15.0 ], [ -73.3, 14.7 ], [ -73.7, 14.4 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "TD", "SS": 0.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -73.7, 14.4 ], [ -74.1, 14.0 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "TS", "SS": 0.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -74.1, 14.0 ], [ -74.5, 13.6 ], [ -75.0, 13.3 ], [ -75.7, 12.9 ], [ -76.4, 12.5 ], [ -76.7, 12.6 ], [ -77.1, 13.0 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "HU", "SS": 1.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -77.1, 13.0 ], [ -78.0, 13.1 ], [ -78.9, 13.2 ], [ -79.8, 13.2 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "HU", "SS": 2.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -79.8, 13.2 ], [ -80.7, 13.4 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "HU", "SS": 4.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -80.7, 13.4 ], [ -81.5, 13.5 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "HU", "SS": 5.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -81.5, 13.5 ], [ -82.3, 13.5 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "HU", "SS": 4.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -82.3, 13.5 ], [ -83.1, 13.6 ], [ -83.9, 13.7 ], [ -84.8, 13.7 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "HU", "SS": 1.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -84.8, 13.7 ], [ -85.7, 13.7 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "TS", "SS": 0.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -85.7, 13.7 ], [ -86.7, 13.8 ], [ -87.8, 13.8 ], [ -89.0, 13.7 ] ] ] } },
+{ "type": "Feature", "properties": { "STORMNUM": 31.0, "STORMTYPE": "TS", "SS": 0.0 }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ -85.7, 13.7 ], [ -86.7, 13.8 ], [ -87.8, 13.8 ], [ -89.0, 13.7 ], [ -89.0, 13.7 ] ] ] } }
+]
+}
