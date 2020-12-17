@@ -56,7 +56,7 @@
         }
 
         .row_leyenda {
-            padding: 20px;
+            padding: 5px 10px;
         }
     </style>
 </head>
@@ -128,8 +128,9 @@
                             onchange="encendido('area_afectada')" checked></div>
                     <div class="col-7" style="font-size: small;line-height: 1;">Zonas afectadas</div>
                     <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, 2020</div>
-                    <div class="row row_leyenda" id="leyenda_area_afectada" style="display:block;"></div>
+                    
                 </div>
+                <div class="row row_leyenda" id="leyenda_area_afectada" style="display:inline-flex;"></div>
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('albergues')"></div>
@@ -202,14 +203,15 @@
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">SIASAR Honduras</div>
                 </div>
+                <div class="row row_leyenda" id="leyenda_sistemas_agua" style="display:none;"></div>
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('sistemas_residuos')"></div>
-                    <div class="col-7" style="font-size: small;line-height: 1;">Sistemas Residuos
-                        
+                    <div class="col-7" style="font-size: small;line-height: 1;">Sistemas Residuos                        
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">SIASAR Honduras</div>
                 </div>
+                <div class="row row_leyenda" id="leyenda_sistemas_residuos" style="display:none;"></div>
             </div>            
             <div data-toggle="collapse" href="#colapsarc7" class="col-12 row_titulo">C7 Electricidad</div>
             <div data-toggle="collapse" href="#colapsarc8" class="col-12 row_titulo">C8 Telecomunicaciones</div>
@@ -681,6 +683,12 @@
                 }
             });
 
+            var leyenda_sistemas_agua = [['Sistemas de agua','royalblue']];
+            $.each(leyenda_sistemas_agua, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_sistemas_agua').append(registro);
+            })
+
             var url_sistemas_residuos = './sistemas_residuos.geojson';
             map.addSource('sistemas_residuos', {
                 type: 'geojson',
@@ -698,6 +706,12 @@
                     'circle-color': 'peru'
                 }
             });
+
+            var leyenda_sistemas_residuos = [['Sistema de residuos','peru']];
+            $.each(leyenda_sistemas_residuos, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_sistemas_residuos').append(registro);
+            })
 
             var url_cobertura_inundada_agricultura = './cobertura_inundada_agricultura.geojson';
             map.addSource('cobertura_inundada_agricultura', {
