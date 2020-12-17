@@ -128,7 +128,7 @@
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('area_afectada')" checked></div>
                 <div class="col-7" style="font-size: small;line-height: 1;">Zonas afectadas</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">6/11</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, 2020</div>
             </div>
             <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -137,6 +137,14 @@
                 </div>
                 <div class="col-3" style="font-size: small;line-height: 1;">27/11/2020</div>
             </div>
+           <!--  <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('cobertura_inundada_infraestructura')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Cobertura Inundada Infraestructura
+                </div>
+                <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, ICF, FAO</div>
+                <div class="row row_leyenda" id="leyenda_cobertura_inundada_infraestructura" style="display:none;"></div>
+            </div> -->
         </div>
             <div data-toggle="collapse" href="#colapsarc3" class="col-12 row_titulo">C3 Educación</div>
             <div id="colapsarc3" class="collapse">
@@ -189,12 +197,22 @@
                         onchange="encendido('cobertura_inundada_agricultura')"></div>
                 <div class="col-7" style="font-size: small;line-height: 1;">Cobertura inundada agricultura
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">FAO</div>
+                <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, ICF, FAO</div>
             </div>
         </div>
             <div class="row row_leyenda" id="leyenda_cobertura_inundada_agricultura" style="display:none;"></div>
             <div data-toggle="collapse" href="#colapsarc11" class="col-12 row_titulo">C11 Turismo y comercio</div>
             <div data-toggle="collapse" href="#colapsarc12" class="col-12 row_titulo">C12 Medio Ambiente</div>
+            <div id="colapsarc12" class="collapse">
+            <div class="row" style="padding: 5px;">
+                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                        onchange="encendido('cobertura_inundada_medioambiente')"></div>
+                <div class="col-7" style="font-size: small;line-height: 1;">Cobertura inundada medio ambiente
+                </div>
+                <div class="col-3" style="font-size: small;line-height: 1;">FAO</div>
+                <div class="row row_leyenda" id="leyenda_cobertura_inundada_medioambiente" style="display:none;"></div>
+            </div>
+        </div>
             <div data-toggle="collapse" href="#colapsarc13" class="col-12 row_titulo">C13 Impacto macroeconómico</div>
         </div>
     </div>
@@ -568,6 +586,7 @@
                     'circle-color': 'orange'
                 }
             });
+
             var url_cobertura_inundada_agricultura = './cobertura_inundada_agricultura.geojson';
             map.addSource('cobertura_inundada_agricultura', {
                 type: 'geojson',
@@ -624,6 +643,136 @@
                     ]
                 }
             });
+
+
+            var url_cobertura_inundada_medioambiente = './cobertura_inundada_medioambiente.geojson';
+            map.addSource('cobertura_inundada_infraestructura', {
+                type: 'geojson',
+                data: url_cobertura_inundada_medioambiente
+            });
+
+            var leyenda_cobertura_inundada_medioambiente = [["Arboles Dispersos",
+                "#d62997"],
+            ["Arenal de Playa",
+                "#e2ce82"],
+            ["Bosque de Conífera Denso",
+                "#1bd17f"],
+             ["Bosque de Conífera Ralo",
+                "#db496b"],
+            ["Bosque de Mangle Alto",
+                "#55dbd5"],
+            ["Bosque Latifoliado Deciduo",
+                "#dcd65b"],
+            ["Bosque Latifoliado Húmedo",
+                "#148ac9"],
+            ["Bosque Latifoliado Húmedo Inundado",
+                "#1432ba"],
+            ["Bosque Mixto",
+                "#a2e02d"],
+            ["Sabanas",
+                "#cb540f"],
+            ["Suelo Desnudo Continental",
+                "#d96752"],
+            ["Tique (Acoelorraphe wright)",
+                "#4f34e7"],
+            ["Vegetación Secundaria Decidua",
+                "#a3ce59"],
+            ["Vegetación Secundaria Húmeda",
+                "#62eb76"]];
+                    
+
+            $.each(leyenda_cobertura_inundada_medioambiente, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_cobertura_inundada_medioambiente').append(registro);
+            })
+
+            map.addLayer({
+                'id': 'cobertura_inundada_medioambiente',
+                'type': 'fill',
+                'source': 'cobertura_inundada_medioambiente',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'fill-color': [
+                        "match",
+                        ["get", "Class_Name"],
+                        "Arboles Dispersos",
+                        "#d62997",
+                        "Arenal de Playa",
+                        "#e2ce82",
+                        "Bosque de Conífera Denso",
+                        "#1bd17f",
+                        "Bosque de Conífera Ralo",
+                        "#db496b",
+                        "Bosque de Mangle Alto",
+                        "#55dbd5",
+                        "Bosque Latifoliado Deciduo",
+                        "#dcd65b",
+                        "Bosque Latifoliado Húmedo",
+                        "#148ac9",
+                        "Bosque Latifoliado Húmedo Inund",
+                        "#1432ba",
+                        "Bosque Mixto",
+                        "#a2e02d",
+                        "Sabanas",
+                        "#cb540f",
+                        "Suelo Desnudo Continental",
+                        "#d96752",
+                        "Tique (Acoelorraphe wright)",
+                        "#4f34e7",
+                        "Vegetación Secundaria Decidua",
+                        "#a3ce59",
+                        "Vegetación Secundaria Húmeda",
+                        "#62eb76",
+                        "#2242cf"
+                    ]
+                }
+            });
+
+
+
+                /*  var url_cobertura_inundada_infraestructura = './cobertura_inundada_infraestructura.geojson';
+            map.addSource('cobertura_inundada_infraestructura', {
+                type: 'geojson',
+                data: url_cobertura_inundada_infraestructura
+            });
+
+            var leyenda_cobertura_inundada_infraestructura = [["Zona Urbana Continua",
+                "#4d5957"],
+            ["Zona Urbana Discontiua",
+                "#f8d848"],
+            ["Zonas Industriales y Comerciales",
+                "#eb9554"],
+                    ];
+
+            $.each(leyenda_cobertura_inundada_infraestructura, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_cobertura_inundada_infraestructura').append(registro);
+            })
+
+            map.addLayer({
+                'id': 'cobertura_inundada_infraestructura',
+                'type': 'fill',
+                'source': 'cobertura_inundada_infraestructura',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'fill-color': [
+                        "match",
+                        ["get", "Class_Name"],
+                        "Zona Urbana Continua",
+                        "#4d5957",
+                        "Zona Urbana Discontiua",
+                        "#f8d848",
+                        "Zonas Industriales y Comerciales",
+                        "#eb9554",
+                        "#2242cf"
+                    ]
+                }
+            }); */
+
 
         });
         encendido = function encendido(x) {
