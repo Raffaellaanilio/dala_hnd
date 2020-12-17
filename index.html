@@ -48,7 +48,7 @@
         }
 
         .row_titulo:hover {
-            background-color:#eaebed;
+            background-color: #eaebed;
         }
 
         .row {
@@ -58,7 +58,6 @@
         .row_leyenda {
             padding: 20px;
         }
-
     </style>
 </head>
 
@@ -78,66 +77,66 @@
     <div id="toc">
         <div class="row">
             <div data-toggle="collapse" href="#colapsarc1" class="col-12 row_titulo">C1 Eventos</div>
-        <div id="colapsarc1" class="collapse">
-            <h6>Huracán Eta</h6>
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('trayectoria_eta')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Trayectoria</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+            <div id="colapsarc1" class="collapse">
+                <h6>Huracán Eta</h6>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('trayectoria_eta')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Trayectoria</div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('estado_tormenta_eta')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+                </div>
+                <div class="row row_leyenda" id="leyenda_estado_tormenta_eta" style="display:none;"></div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('velocidad_viento_eta')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+                </div>
+                <div class="row row_leyenda" id="leyenda_velocidad_viento_eta" style="display:none;"></div>
+                <h6>Huracán Iota</h6>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('trayectoria_iota')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Trayectoria</div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('estado_tormenta_iota')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+                </div>
+                <div class="row row_leyenda" id="leyenda_estado_tormenta_iota" style="display:none;"></div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('velocidad_viento_iota')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
+                    <div class="row row_leyenda" id="leyenda_velocidad_viento_iota" style="display:none;"></div>
+                </div>
             </div>
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('estado_tormenta_eta')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
-            </div>
-            <div class="row row_leyenda" id="leyenda_estado_tormenta_eta" style="display:none;"></div>
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('velocidad_viento_eta')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
-            </div>
-            <div class="row row_leyenda" id="leyenda_velocidad_viento_eta" style="display:none;"></div>
-            <h6>Huracán Iota</h6>
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('trayectoria_iota')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Trayectoria</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
-            </div>
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('estado_tormenta_iota')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Estado de Tormenta</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
-            </div>
-            <div class="row row_leyenda" id="leyenda_estado_tormenta_iota" style="display:none;"></div>
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('velocidad_viento_iota')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Velocidad del Viento</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">NOAA, 2020</div>
-                <div class="row row_leyenda" id="leyenda_velocidad_viento_iota" style="display:none;"></div>
-            </div>
-        </div>
             <div data-toggle="collapse" href="#colapsarc2" class="col-12 row_titulo">C2 Población afectada</div>
             <div id="colapsarc2" class="collapse">
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('area_afectada')" checked></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Zonas afectadas</div>
-                <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, 2020</div>
-            </div>
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('albergues')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Albergues
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('area_afectada')" checked></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Zonas afectadas</div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, 2020</div>
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">27/11/2020</div>
-            </div>
-           <!--  <div class="row" style="padding: 5px;">
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('albergues')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Albergues
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">27/11/2020</div>
+                </div>
+                <!--  <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('cobertura_inundada_infraestructura')"></div>
                 <div class="col-7" style="font-size: small;line-height: 1;">Cobertura Inundada Infraestructura
@@ -145,74 +144,108 @@
                 <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, ICF, FAO</div>
                 <div class="row row_leyenda" id="leyenda_cobertura_inundada_infraestructura" style="display:none;"></div>
             </div> -->
-        </div>
+            </div>
             <div data-toggle="collapse" href="#colapsarc3" class="col-12 row_titulo">C3 Educación</div>
             <div id="colapsarc3" class="collapse">
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('establecimientos_educativos')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Establecimientos Educativos
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('establecimientos_educativos')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Establecimientos Educativos
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('establecimientos_educativos_afectados')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Establecimientos Educativos Afectados
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">Diciembre 2020</div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('albergues_afectados')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Albergues Afectados
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">Diciembre 2020</div>
+                </div>
             </div>
-        </div>
             <div data-toggle="collapse" href="#colapsarc4" class="col-12 row_titulo">C4 Salud</div>
             <div id="colapsarc4" class="collapse">
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('unidades_salud')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Unidades de Salud
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('unidades_salud')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Unidades de Salud
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
             </div>
-        </div>
             <div data-toggle="collapse" href="#colapsarc5" class="col-12 row_titulo">C5 Vivienda</div>
             <div id="colapsarc5" class="collapse">
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('municipios')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Porcentaje de viviendas en mal estado por
-                    municipio
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('municipios')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Porcentaje de viviendas en mal estado
+                        por
+                        municipio
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">Año 2013</div>
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">Año 2013</div>
             </div>
-        </div>
             <div data-toggle="collapse" href="#colapsarc6" class="col-12 row_titulo">C6 Agua y saneamiento</div>
+            <div id="colapsarc6" class="collapse">
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('sistemas_agua')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Sistemas de agua
+                        
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">SIASAR Honduras</div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('sistemas_residuos')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Sistemas Residuos
+                        
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">SIASAR Honduras</div>
+                </div>
+            </div>            
             <div data-toggle="collapse" href="#colapsarc7" class="col-12 row_titulo">C7 Electricidad</div>
             <div data-toggle="collapse" href="#colapsarc8" class="col-12 row_titulo">C8 Telecomunicaciones</div>
             <div data-toggle="collapse" href="#colapsarc9" class="col-12 row_titulo">C9 Transporte y Vialidad</div>
             <div id="colapsarc9" class="collapse">
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('afectaciones_vial_investh')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Afectaciones viales INVESTH
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('afectaciones_vial_investh')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Afectaciones viales INVESTH
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">25/11/2020</div>
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">25/11/2020</div>
             </div>
-        </div>
             <div data-toggle="collapse" href="#colapsarc10" class="col-12 row_titulo">C10 Agricultura</div>
             <div id="colapsarc10" class="collapse">
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('cobertura_inundada_agricultura')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Cobertura inundada agricultura
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('cobertura_inundada_agricultura')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Cobertura inundada agricultura
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, ICF, FAO</div>
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, ICF, FAO</div>
             </div>
-        </div>
             <div class="row row_leyenda" id="leyenda_cobertura_inundada_agricultura" style="display:none;"></div>
             <div data-toggle="collapse" href="#colapsarc11" class="col-12 row_titulo">C11 Turismo y comercio</div>
             <div data-toggle="collapse" href="#colapsarc12" class="col-12 row_titulo">C12 Medio Ambiente</div>
             <div id="colapsarc12" class="collapse">
-            <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('cobertura_inundada_medioambiente')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Cobertura inundada medio ambiente
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('cobertura_inundada_medioambiente')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Cobertura inundada medio ambiente
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">FAO</div>
+                    <div class="row row_leyenda" id="leyenda_cobertura_inundada_medioambiente" style="display:none;">
+                    </div>
                 </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">FAO</div>
-                <div class="row row_leyenda" id="leyenda_cobertura_inundada_medioambiente" style="display:none;"></div>
             </div>
-        </div>
             <div data-toggle="collapse" href="#colapsarc13" class="col-12 row_titulo">C13 Impacto macroeconómico</div>
         </div>
     </div>
@@ -323,10 +356,10 @@
                     'visibility': 'none'
                 },
                 'paint': {
-                 'line-color': 'black',
-                 'line-width': 3,
-             }
-         }); 
+                    'line-color': 'black',
+                    'line-width': 3,
+                }
+            });
 
 
             var url_trayectoria_iota = './trayectoria_iota.geojson';
@@ -342,11 +375,11 @@
                     'visibility': 'none'
                 },
                 'paint': {
-                 'line-color': 'black',
-                 'line-width': 3,
-             }
-         }); 
-                    
+                    'line-color': 'black',
+                    'line-width': 3,
+                }
+            });
+
             var url_velocidad_viento_iota = './velocidad_viento_iota.geojson';
             map.addSource('velocidad_viento_iota', {
                 type: 'geojson',
@@ -359,9 +392,9 @@
                 "#34e19f"],
             ["~ 120 km/hr",
                 "#721f81"],
-           ];
+            ];
 
-           $.each(leyenda_velocidad_viento_iota, function (i, record) {
+            $.each(leyenda_velocidad_viento_iota, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
                 $('#leyenda_velocidad_viento_iota').append(registro);
             })
@@ -397,7 +430,7 @@
                 "#34e19f"],
             ["~ 120 km/hr",
                 "#721f81"],
-           ];
+            ];
 
             $.each(leyenda_velocidad_viento_eta, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
@@ -422,8 +455,8 @@
                     'fill-opacity': 0.8,
                 }
             });
-         
-         var url_estado_tormenta_iota = './estado_tormenta_iota.geojson';
+
+            var url_estado_tormenta_iota = './estado_tormenta_iota.geojson';
             map.addSource('estado_tormenta_iota', {
                 type: 'geojson',
                 data: url_estado_tormenta_iota
@@ -437,7 +470,7 @@
                 "#50127b"],
             ["Huracán",
                 "#000004"],
-           ];
+            ];
 
             $.each(leyenda_estado_tormenta_iota, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
@@ -468,8 +501,8 @@
                         "#2242cf"
                     ]
                 }
-            });           
-           
+            });
+
             var url_estado_tormenta_eta = './estado_tormenta_eta.geojson';
             map.addSource('estado_tormenta_eta', {
                 type: 'geojson',
@@ -484,7 +517,7 @@
                 "#50127b"],
             ["Huracán",
                 "#000004"],
-           ];
+            ];
 
             $.each(leyenda_estado_tormenta_eta, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
@@ -587,6 +620,78 @@
                 }
             });
 
+            var url_establecimientos_educativos_afectados = './escuelas_afectadas.geojson';
+            map.addSource('establecimientos_educativos_afectados', {
+                type: 'geojson',
+                data: url_establecimientos_educativos_afectados
+            });
+            map.addLayer({
+                'id': 'establecimientos_educativos_afectados',
+                'type': 'circle',
+                'source': 'establecimientos_educativos_afectados',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'circle-radius': 6,
+                    'circle-color': 'red'
+                }
+            });
+
+            var url_albergues_afectados = './albergues_afectados.geojson';
+            map.addSource('albergues_afectados', {
+                type: 'geojson',
+                data: url_albergues_afectados
+            });
+            map.addLayer({
+                'id': 'albergues_afectados',
+                'type': 'circle',
+                'source': 'albergues_afectados',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'circle-radius': 6,
+                    'circle-color': 'green'
+                }
+            });
+
+            var url_sistemas_agua = './sistemas_agua.geojson';
+            map.addSource('sistemas_agua', {
+                type: 'geojson',
+                data: url_sistemas_agua
+            });
+            map.addLayer({
+                'id': 'sistemas_agua',
+                'type': 'circle',
+                'source': 'sistemas_agua',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'circle-radius': 4,
+                    'circle-color': 'royalblue'
+                }
+            });
+
+            var url_sistemas_residuos = './sistemas_residuos.geojson';
+            map.addSource('sistemas_residuos', {
+                type: 'geojson',
+                data: url_sistemas_residuos
+            });
+            map.addLayer({
+                'id': 'sistemas_residuos',
+                'type': 'circle',
+                'source': 'sistemas_residuos',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'circle-radius': 4,
+                    'circle-color': 'peru'
+                }
+            });
+
             var url_cobertura_inundada_agricultura = './cobertura_inundada_agricultura.geojson';
             map.addSource('cobertura_inundada_agricultura', {
                 type: 'geojson',
@@ -657,7 +762,7 @@
                 "#e2ce82"],
             ["Bosque de Conífera Denso",
                 "#1bd17f"],
-             ["Bosque de Conífera Ralo",
+            ["Bosque de Conífera Ralo",
                 "#db496b"],
             ["Bosque de Mangle Alto",
                 "#55dbd5"],
@@ -679,7 +784,7 @@
                 "#a3ce59"],
             ["Vegetación Secundaria Húmeda",
                 "#62eb76"]];
-                    
+
 
             $.each(leyenda_cobertura_inundada_medioambiente, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
@@ -732,46 +837,46 @@
 
 
 
-                /*  var url_cobertura_inundada_infraestructura = './cobertura_inundada_infraestructura.geojson';
-            map.addSource('cobertura_inundada_infraestructura', {
-                type: 'geojson',
-                data: url_cobertura_inundada_infraestructura
-            });
+            /*  var url_cobertura_inundada_infraestructura = './cobertura_inundada_infraestructura.geojson';
+        map.addSource('cobertura_inundada_infraestructura', {
+            type: 'geojson',
+            data: url_cobertura_inundada_infraestructura
+        });
 
-            var leyenda_cobertura_inundada_infraestructura = [["Zona Urbana Continua",
-                "#4d5957"],
-            ["Zona Urbana Discontiua",
-                "#f8d848"],
-            ["Zonas Industriales y Comerciales",
-                "#eb9554"],
-                    ];
+        var leyenda_cobertura_inundada_infraestructura = [["Zona Urbana Continua",
+            "#4d5957"],
+        ["Zona Urbana Discontiua",
+            "#f8d848"],
+        ["Zonas Industriales y Comerciales",
+            "#eb9554"],
+                ];
 
-            $.each(leyenda_cobertura_inundada_infraestructura, function (i, record) {
-                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
-                $('#leyenda_cobertura_inundada_infraestructura').append(registro);
-            })
+        $.each(leyenda_cobertura_inundada_infraestructura, function (i, record) {
+            var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+            $('#leyenda_cobertura_inundada_infraestructura').append(registro);
+        })
 
-            map.addLayer({
-                'id': 'cobertura_inundada_infraestructura',
-                'type': 'fill',
-                'source': 'cobertura_inundada_infraestructura',
-                'layout': {
-                    'visibility': 'none'
-                },
-                'paint': {
-                    'fill-color': [
-                        "match",
-                        ["get", "Class_Name"],
-                        "Zona Urbana Continua",
-                        "#4d5957",
-                        "Zona Urbana Discontiua",
-                        "#f8d848",
-                        "Zonas Industriales y Comerciales",
-                        "#eb9554",
-                        "#2242cf"
-                    ]
-                }
-            }); */
+        map.addLayer({
+            'id': 'cobertura_inundada_infraestructura',
+            'type': 'fill',
+            'source': 'cobertura_inundada_infraestructura',
+            'layout': {
+                'visibility': 'none'
+            },
+            'paint': {
+                'fill-color': [
+                    "match",
+                    ["get", "Class_Name"],
+                    "Zona Urbana Continua",
+                    "#4d5957",
+                    "Zona Urbana Discontiua",
+                    "#f8d848",
+                    "Zonas Industriales y Comerciales",
+                    "#eb9554",
+                    "#2242cf"
+                ]
+            }
+        }); */
 
 
         });
