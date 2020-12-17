@@ -128,6 +128,7 @@
                             onchange="encendido('area_afectada')" checked></div>
                     <div class="col-7" style="font-size: small;line-height: 1;">Zonas afectadas</div>
                     <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, 2020</div>
+                    <div class="row row_leyenda" id="leyenda_area_afectada" style="display:block;"></div>
                 </div>
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -356,6 +357,12 @@
             map.on('mouseleave', 'area_afectada', function () {
                 map.getCanvas().style.cursor = '';
             });
+
+            var leyenda_area_afectada = [['Área afectada','royalblue']];
+            $.each(leyenda_area_afectada, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_area_afectada').append(registro);
+            })
 
 
             var url_red_electrica_sanpedrosula = './red_electrica_sanpedrosula.geojson';
@@ -828,7 +835,7 @@
 
 
             var url_cobertura_inundada_medioambiente = './cobertura_inundada_medioambiente.geojson';
-            map.addSource('cobertura_inundada_infraestructura', {
+            map.addSource('cobertura_inundada_medioambiente', {
                 type: 'geojson',
                 data: url_cobertura_inundada_medioambiente
             });
