@@ -138,6 +138,20 @@
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">27/11/2020</div>
                 </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('albergues_afectados')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Albergues Afectados
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">Diciembre 2020</div>
+                </div>
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('eta_iota_afectaciones_infraestructura')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Afectaciones Infraestructura Eta/Iota
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">COPECO</div>
+                </div>
                 <!--  <div class="row" style="padding: 5px;">
                 <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                         onchange="encendido('cobertura_inundada_infraestructura')"></div>
@@ -160,13 +174,6 @@
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('establecimientos_educativos_afectados')"></div>
                     <div class="col-7" style="font-size: small;line-height: 1;">Establecimientos Educativos Afectados
-                    </div>
-                    <div class="col-3" style="font-size: small;line-height: 1;">Diciembre 2020</div>
-                </div>
-                <div class="row" style="padding: 5px;">
-                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                            onchange="encendido('albergues_afectados')"></div>
-                    <div class="col-7" style="font-size: small;line-height: 1;">Albergues Afectados
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">Diciembre 2020</div>
                 </div>
@@ -214,6 +221,15 @@
                 <div class="row row_leyenda" id="leyenda_sistemas_residuos" style="display:none;"></div>
             </div>            
             <div data-toggle="collapse" href="#colapsarc7" class="col-12 row_titulo">C7 Electricidad</div>
+            <div id="colapsarc7" class="collapse">
+                <div class="row" style="padding: 5px;">
+                    <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
+                            onchange="encendido('red_electrica_sanpedrosula')"></div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Red Eléctrica San Pedro Sula
+                    </div>
+                    <div class="col-3" style="font-size: small;line-height: 1;">COPECO</div>
+                </div>
+            </div>
             <div data-toggle="collapse" href="#colapsarc8" class="col-12 row_titulo">C8 Telecomunicaciones</div>
             <div data-toggle="collapse" href="#colapsarc9" class="col-12 row_titulo">C9 Transporte y Vialidad</div>
             <div id="colapsarc9" class="collapse">
@@ -351,6 +367,26 @@
             })
 
 
+            var url_red_electrica_sanpedrosula = './red_electrica_sanpedrosula.geojson';
+            map.addSource('red_electrica_sanpedrosula', {
+                type: 'geojson',
+                data: url_red_electrica_sanpedrosula
+            });
+
+            map.addLayer({
+                'id': 'red_electrica_sanpedrosula',
+                'type': 'line',
+                'source': 'red_electrica_sanpedrosula',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'line-color': 'orange',
+                    'line-width': 1,
+                }
+            });
+
+            
             var url_trayectoria_eta = './trayectoria_eta.geojson';
             map.addSource('trayectoria_eta', {
                 type: 'geojson',
@@ -593,6 +629,35 @@
                 }
             });
 
+            var url_eta_iota_afectaciones_infraestructura = './eta_iota_afectaciones_infraestructura.geojson';
+            map.addSource('eta_iota_afectaciones_infraestructura', {
+                type: 'geojson',
+                data: url_eta_iota_afectaciones_infraestructura
+            });
+
+            map.on('click', 'eta_iota_afectaciones_infraestructura', function (e) {
+                var descripcion = e.features[0].properties.DESSCRIP;
+                var evento = e.features[0].properties.EVENTO;
+                var innerPopup = '<div><b>Evento:</b>' + descripcion + '<br><b>Huracán:</b> ' + evento + '</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
+            map.addLayer({
+                'id': 'eta_iota_afectaciones_infraestructura',
+                'type': 'circle',
+                'source': 'eta_iota_afectaciones_infraestructura',
+                'layout': {
+                    'visibility': 'none'
+                },
+                'paint': {
+                    'circle-radius': 6,
+                    'circle-color': 'darkslateblue'
+                }
+            });
+
             var url_afectaciones_vial_investh = './afectaciones_vial_investh.geojson';
             map.addSource('afectaciones_vial_investh', {
                 type: 'geojson',
@@ -652,6 +717,18 @@
                 type: 'geojson',
                 data: url_albergues_afectados
             });
+
+            map.on('click', 'albergues_afectados', function (e) {
+                var nombre = e.features[0].properties.ce_albergue;
+                var capacidad = e.features[0].properties.capacidad;
+                var telefono = e.features[0].properties.telefono;
+                var innerPopup = '<div><b>Nombre:</b>' + nombre + '<br><b>Capacidad:</b> ' + capacidad + '<br><b>Teléfono:</b> ' + telefono +'</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
             map.addLayer({
                 'id': 'albergues_afectados',
                 'type': 'circle',
