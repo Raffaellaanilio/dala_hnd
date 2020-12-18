@@ -11,10 +11,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+
     <style>
+        
         body {
             margin: 0;
             padding: 0;
+            font-family: 'Nunito', sans-serif;
         }
 
         #map {
@@ -58,6 +63,11 @@
         .row_leyenda {
             padding: 20px;
         }
+
+        .mapboxgl-popup-content {
+            font-family: 'Nunito', sans-serif;
+        }
+        
     </style>
 </head>
 
@@ -596,6 +606,18 @@
                 type: 'geojson',
                 data: url_albergue
             });
+
+            map.on('click', 'albergues', function (e) {
+                var nombre = e.features[0].properties.ALBERGUE;
+                var telefono = e.features[0].properties.TELEFONO;
+                var comunidad = e.features[0].properties.COMUNIDAD;
+                var innerPopup = '<div><b>Nombre:</b>' + nombre + '<br><b>Teléfono:</b> ' + telefono + '<br><b>Comunidad:</b> ' + comunidad +'</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
             map.addLayer({
                 'id': 'albergues',
                 'type': 'circle',
@@ -614,6 +636,16 @@
                 type: 'geojson',
                 data: url_unidades_salud
             });
+
+            map.on('click', 'unidades_salud', function (e) {
+                var nombre = e.features[0].properties.name;
+                var innerPopup = '<div><b>Nombre:</b>' + nombre + '</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
             map.addLayer({
                 'id': 'unidades_salud',
                 'type': 'circle',
@@ -738,6 +770,17 @@
                     'circle-radius': 6,
                     'circle-color': 'green'
                 }
+            });
+
+            map.on('click', 'albergues_afectados', function (e) {
+                var nombre = e.features[0].properties.ce_albergue;
+                var capacidad = e.features[0].properties.capacidad;
+                var telefono = e.features[0].properties.telefono;
+                var innerPopup = '<div><b>Nombre:</b>' + nombre + '<br><b>Capacidad:</b> ' + capacidad + '<br><b>Teléfono:</b> ' + telefono +'</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
             });
 
             var url_sistemas_agua = './sistemas_agua.geojson';
