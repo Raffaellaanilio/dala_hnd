@@ -721,6 +721,16 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 type: 'geojson',
                 data: url_afectaciones_vial_investh
             });
+
+            map.on('click', 'afectaciones_vial_investh', function (e) {
+                var evento = e.features[0].properties.nombre;
+                var innerPopup = '<div>'+ '<h6 style="text-align: center;"><b>Información</b></h6>' + '<br><b>Evento: </b> ' + evento + '</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
             map.addLayer({
                 'id': 'afectaciones_vial_investh',
                 'type': 'circle',
@@ -851,6 +861,17 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('click', 'sistemas_agua', function (e) {
+                var nombre = e.features[0].properties.nombre;
+                var viviendas = e.features[0].properties.viv_servidas;
+                var tratamiento = e.features[0].properties.trat_tipos;
+                var innerPopup = '<div>'+ '<h6 style="text-align: center;"><b>Información</b></h6>' +'<b>Nombre:</b>' + nombre + '<br><b>Viviendas Servidas: </b> ' + viviendas + '<br><b>Tipo de Tratamiento:</b> ' + tratamiento +'</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
             var leyenda_sistemas_agua = [['Sistemas de agua','royalblue']];
             $.each(leyenda_sistemas_agua, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
@@ -862,6 +883,17 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 type: 'geojson',
                 data: url_sistemas_residuos
             });
+
+            map.on('click', 'sistemas_residuos', function (e) {
+                var nombre = e.features[0].properties.nombre;
+                var viviendas = e.features[0].properties.viviendas;
+                var innerPopup = '<div>'+ '<h6 style="text-align: center;"><b>Información</b></h6>' +'<b>Nombre:</b>' + nombre + '<br><b>Viviendas Servidas: </b> ' + viviendas +'</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
             map.addLayer({
                 'id': 'sistemas_residuos',
                 'type': 'circle',
