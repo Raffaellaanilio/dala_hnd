@@ -32,6 +32,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Maven Pro';
+            background-color: #535355;
         }
 
         #map {
@@ -93,26 +94,42 @@
                 desastre. También refuerza la capacidad de recuperación mediante la promoción de los principios
                 de “Reconstruir Mejor” en los esfuerzos de reconstrucción y recuperación. </br></br>
                 Las evaluaciones permiten estimar, en primer lugar, las intervenciones que el gobierno afectado
-deberá realizar en el corto plazo para iniciar la recuperación y, en segundo lugar, las necesidades
-financieras para lograr la recuperación, la reconstrucción y la gestión o reducción del riesgo de
-desastres en general. </br></br>El producto final de la evaluación debe ser un programa integral de recuperación económica, reconstrucción y reducción de riesgos que deberá orientar todas las actividades
-en un país en desarrollo después de un desastre. </br></br><a href="http://documents1.worldbank.org/curated/en/898761468333305766/pdf/880860SPANISH0010B00PUBLIC00Spanish.pdf">Más información</a>
+                deberá realizar en el corto plazo para iniciar la recuperación y, en segundo lugar, las necesidades
+                financieras para lograr la recuperación, la reconstrucción y la gestión o reducción del riesgo de
+                desastres en general. </br></br>El producto final de la evaluación debe ser un programa integral de recuperación económica, reconstrucción y reducción de riesgos que deberá orientar todas las actividades
+                en un país en desarrollo después de un desastre. </br></br><a href="http://documents1.worldbank.org/curated/en/898761468333305766/pdf/880860SPANISH0010B00PUBLIC00Spanish.pdf">Más información</a></br></br>
+                <div class="card">
+            <div class="card-footer">Instituciones Colaboradoras de Información</div>
+            <div class="card-body">
+                -Inversión Estratégica de Honduras (InvestH) </br>
+                -Secretaría de Infraestructura y Servicios Públicos (INSEP) </br>
+                -Secretaría de Salud </br>
+                -General Redes Integradas de Servicios de Salud"</br>
+                -Comisión Permanente de Contingencias (COPECO) </br>
+                -Secretaría de Educación</br>
+                -Secretaría de Coordinación General de Gobierno</br>
+                -Instituto Nacional de Estadística</br>
+                -Secretaría de Agricultura y Ganadería (INFOAGRO)</br>
+                -Secretaría de Finanzas (SEFIN)</br>
+                -Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO)</br>
             </div>
-    </div>
+        </div>
+        </div>
+</div>
 
     <div id="encabezado" class="row" style="height: 10vh; width: 60%;">
         <div class="col-2" style="padding: 10px 40px;">
             <img src="logo-cepal.png" height="50px">
         </div>
         <div class="col-9 text-center">
-            <h5>DaLA (Evaluación de Daños, Pérdidas y Necesidades) <i data-toggle="tooltip" data-placement="top" id="icono_info" title="Acerca de la Metodología DaLA" class="fas fa-info-circle"></i></h5>
-            <p>Huracanes Eta - Iota. Honduras - 2020</p>
+            <h5 style="color: whitesmoke;">DaLA (Evaluación de Daños, Pérdidas y Necesidades) <i data-toggle="tooltip" data-placement="top" id="icono_info" title="Acerca de la Metodología DaLA" class="fas fa-info-circle"></i></h5>
+            <p style="color: whitesmoke;">Huracanes Eta - Iota. Honduras - 2020</p>
         </div>
     </div>
     <div id="map"></div>
     <div id="toc">
         <div class="row">
-            <div data-toggle="collapse" href="#colapsarc1" class="col-12 row_titulo">C1 Eventos</div>
+            <div data-toggle="collapse" href="#colapsarc1" class="col-12 row_titulo">C1 Eventos<h6 style="float:right;" class="badge badge-secondary">6</h6></div>
             <div id="colapsarc1" class="collapse">
                 <h6>Huracán Eta</h6>
                 <div class="row" style="padding: 5px;">
@@ -157,14 +174,13 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     <div class="row row_leyenda" id="leyenda_velocidad_viento_iota" style="display:none;"></div>
                 </div>
             </div>
-            <div data-toggle="collapse" href="#colapsarc2" class="col-12 row_titulo">C2 Población afectada</div>
-            <div id="colapsarc2" class="collapse">
+            <div data-toggle="collapse" href="#colapsarc2" class="col-12 row_titulo">C2 Población afectada<h6 style="float:right;" class="badge badge-secondary">4</h6></div>
+            <div id="colapsarc2" class="collapsed">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('area_afectada')" checked></div>
-                    <div class="col-7" style="font-size: small;line-height: 1;">Zonas afectadas</div>
+                    <div class="col-7" style="font-size: small;line-height: 1;">Zonas Inundadas</div>
                     <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, 2020</div>
-                    
                 </div>
                 <div class="row row_leyenda" id="leyenda_area_afectada" style="display:inline-flex;"></div>
                 <div class="row" style="padding: 5px;">
@@ -174,6 +190,7 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">27/11/2020</div>
                 </div>
+                <div class="row row_leyenda" id="leyenda_albergues" style="display:none;"></div>
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('albergues_afectados')"></div>
@@ -181,6 +198,7 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">Diciembre 2020</div>
                 </div>
+                <div class="row row_leyenda" id="leyenda_albergues_afectados" style="display:none;"></div>
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('eta_iota_afectaciones_infraestructura')"></div>
@@ -188,16 +206,9 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">COPECO</div>
                 </div>
-                <!--  <div class="row" style="padding: 5px;">
-                <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
-                        onchange="encendido('cobertura_inundada_infraestructura')"></div>
-                <div class="col-7" style="font-size: small;line-height: 1;">Cobertura Inundada Infraestructura
-                </div>
-                <div class="col-3" style="font-size: small;line-height: 1;">UNOSAT, ICF, FAO</div>
-                <div class="row row_leyenda" id="leyenda_cobertura_inundada_infraestructura" style="display:none;"></div>
-            </div> -->
+                <div class="row row_leyenda" id="leyenda_eta_iota_afectaciones_infraestructura" style="display:none;"></div>
             </div>
-            <div data-toggle="collapse" href="#colapsarc3" class="col-12 row_titulo">C3 Educación</div>
+            <div data-toggle="collapse" href="#colapsarc3" class="col-12 row_titulo">C3 Educación<h6 style="float:right;" class="badge badge-secondary">2</h6></div>
             <div id="colapsarc3" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -206,6 +217,7 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
                 </div>
+                <div class="row row_leyenda" id="leyenda_establecimientos_educativos" style="display:none;"></div>
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('establecimientos_educativos_afectados')"></div>
@@ -213,9 +225,9 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">Diciembre 2020</div>
                 </div>
-                <div class="row row_leyenda" id="leyenda_establecimientos_educativos_afectados" style="display:inline-flex;"></div>
-            </div>
-            <div data-toggle="collapse" href="#colapsarc4" class="col-12 row_titulo">C4 Salud</div>
+                <div class="row row_leyenda" id="leyenda_establecimientos_educativos_afectados" style="display:none;"></div> 
+            </div>     
+            <div data-toggle="collapse" href="#colapsarc4" class="col-12 row_titulo">C4 Salud<h6 style="float:right;" class="badge badge-secondary">1</h6></div>
             <div id="colapsarc4" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -224,26 +236,26 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">Noviembre 2020</div>
                 </div>
+                <div class="row row_leyenda" id="leyenda_unidades_salud" style="display:none;"></div>        
+
             </div>
-            <div data-toggle="collapse" href="#colapsarc5" class="col-12 row_titulo">C5 Vivienda</div>
+            <div data-toggle="collapse" href="#colapsarc5" class="col-12 row_titulo">C5 Vivienda<h6 style="float:right;" class="badge badge-secondary">1</h6></div>
             <div id="colapsarc5" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('municipios')"></div>
-                    <div class="col-7" style="font-size: small;line-height: 1;">Porcentaje de viviendas en mal estado
-                        por
-                        municipio
+                    <div class="col-7" style="font-size: small;line-height: 1;">Porcentaje de viviendas en mal estado por municipio
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">Año 2013</div>
                 </div>
             </div>
-            <div data-toggle="collapse" href="#colapsarc6" class="col-12 row_titulo">C6 Agua y saneamiento</div>
+            <div class="row row_leyenda" id="leyenda_municipios" style="display:none;"></div> 
+            <div data-toggle="collapse" href="#colapsarc6" class="col-12 row_titulo">C6 Agua y saneamiento<h6 style="float:right;" class="badge badge-secondary">2</h6></div>
             <div id="colapsarc6" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
                             onchange="encendido('sistemas_agua')"></div>
                     <div class="col-7" style="font-size: small;line-height: 1;">Sistemas de agua
-                        
                     </div>
                     <div class="col-3" style="font-size: small;line-height: 1;">SIASAR Honduras</div>
                 </div>
@@ -257,7 +269,7 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 </div>
                 <div class="row row_leyenda" id="leyenda_sistemas_residuos" style="display:none;"></div>
             </div>            
-            <div data-toggle="collapse" href="#colapsarc7" class="col-12 row_titulo">C7 Electricidad</div>
+            <div data-toggle="collapse" href="#colapsarc7" class="col-12 row_titulo">C7 Electricidad<h6 style="float:right;" class="badge badge-secondary">1</h6></div>
             <div id="colapsarc7" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -267,8 +279,9 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     <div class="col-3" style="font-size: small;line-height: 1;">COPECO</div>
                 </div>
             </div>
-            <div data-toggle="collapse" href="#colapsarc8" class="col-12 row_titulo">C8 Telecomunicaciones</div>
-            <div data-toggle="collapse" href="#colapsarc9" class="col-12 row_titulo">C9 Transporte y Vialidad</div>
+            <div class="row row_leyenda" id="leyenda_red_electrica_sanpedrosula" style="display:none;"></div>
+            <div data-toggle="collapse" href="#colapsarc8" class="col-12 row_titulo">C8 Telecomunicaciones<h6 style="float:right;" class="badge badge-secondary">0</h6></div>
+            <div data-toggle="collapse" href="#colapsarc9" class="col-12 row_titulo">C9 Transporte y Vialidad<h6 style="float:right;" class="badge badge-secondary">1</h6></div>
             <div id="colapsarc9" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -278,7 +291,8 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     <div class="col-3" style="font-size: small;line-height: 1;">25/11/2020</div>
                 </div>
             </div>
-            <div data-toggle="collapse" href="#colapsarc10" class="col-12 row_titulo">C10 Agricultura</div>
+            <div class="row row_leyenda" id="leyenda_afectaciones_vial_investh" style="display:none;"></div>
+            <div data-toggle="collapse" href="#colapsarc10" class="col-12 row_titulo">C10 Agricultura<h6 style="float:right;" class="badge badge-secondary">1</h6></div>
             <div id="colapsarc10" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -289,8 +303,8 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 </div>
             </div>
             <div class="row row_leyenda" id="leyenda_cobertura_inundada_agricultura" style="display:none;"></div>
-            <div data-toggle="collapse" href="#colapsarc11" class="col-12 row_titulo">C11 Turismo y comercio</div>
-            <div data-toggle="collapse" href="#colapsarc12" class="col-12 row_titulo">C12 Medio Ambiente</div>
+            <div data-toggle="collapse" href="#colapsarc11" class="col-12 row_titulo">C11 Turismo y comercio<h6 style="float:right;" class="badge badge-secondary">0</h6></div>
+            <div data-toggle="collapse" href="#colapsarc12" class="col-12 row_titulo">C12 Medio Ambiente<h6 style="float:right;" class="badge badge-secondary">1</h6></div>
             <div id="colapsarc12" class="collapse">
                 <div class="row" style="padding: 5px;">
                     <div class="col-1" style="font-size: small;line-height: 1;"><input type="checkbox"
@@ -302,8 +316,7 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     </div>
                 </div>
             </div>
-            <div data-toggle="collapse" href="#colapsarc13" class="col-12 row_titulo">C13 Impacto macroeconómico</div>
-        </div>
+            <div data-toggle="collapse" href="#colapsarc13" class="col-12 row_titulo">C13 Impacto macroeconómico<h6 style="float:right;" class="badge badge-secondary">0</h6></div>
     </div>
 
 </body>
@@ -370,7 +383,7 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
             map.on('mouseleave', 'municipios', function () {
                 map.getCanvas().style.cursor = '';
             });
-
+//
             var url_area_afectada = './area_afectada.geojson';
             map.addSource('area_afectada', {
                 type: 'geojson',
@@ -403,7 +416,7 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 $('#leyenda_area_afectada').append(registro);
             })
 
-
+//
             var url_red_electrica_sanpedrosula = './red_electrica_sanpedrosula.geojson';
             map.addSource('red_electrica_sanpedrosula', {
                 type: 'geojson',
@@ -422,7 +435,15 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     'line-width': 1,
                 }
             });
+            map.on('mouseenter', 'red_electrica_sanpedrosula', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
 
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'red_electrica_sanpedrosula', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
             
             var url_trayectoria_eta = './trayectoria_eta.geojson';
             map.addSource('trayectoria_eta', {
@@ -443,6 +464,15 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('mouseenter', 'trayectoria_eta', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'red_electrica_sanpedrosula', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
 
             var url_trayectoria_iota = './trayectoria_iota.geojson';
             map.addSource('trayectoria_iota', {
@@ -462,13 +492,24 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('mouseenter', 'trayectoria_iota', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'trayectoria_iota', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+ //           
+
             var url_velocidad_viento_iota = './velocidad_viento_iota.geojson';
             map.addSource('velocidad_viento_iota', {
                 type: 'geojson',
                 data: url_velocidad_viento_iota
             });
 
-            var leyenda_velocidad_viento_iota = [["~60 km/hr",
+            var leyenda_velocidad_viento_iota = [["~ 60 km/hr",
                 "#f1d64b"],
             ["~ 90 km/hr",
                 "#34e19f"],
@@ -500,13 +541,24 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('mouseenter', 'velocidad_viento_iota', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'velocidad_viento_iota', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+//            
+
             var url_velocidad_viento_eta = './velocidad_viento_eta.geojson';
             map.addSource('velocidad_viento_eta', {
                 type: 'geojson',
                 data: url_velocidad_viento_eta
             });
 
-            var leyenda_velocidad_viento_eta = [["~60 km/hr",
+            var leyenda_velocidad_viento_eta = [["~ 60 km/hr",
                 "#f1d64b"],
             ["~ 90 km/hr",
                 "#34e19f"],
@@ -538,6 +590,16 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('mouseenter', 'velocidad_viento_eta', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'velocidad_viento_eta', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+//
             var url_estado_tormenta_iota = './estado_tormenta_iota.geojson';
             map.addSource('estado_tormenta_iota', {
                 type: 'geojson',
@@ -585,6 +647,15 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('mouseenter', 'estado_tormenta_iota', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'estado_tormenta_iota', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
             var url_estado_tormenta_eta = './estado_tormenta_eta.geojson';
             map.addSource('estado_tormenta_eta', {
                 type: 'geojson',
@@ -630,6 +701,15 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('mouseenter', 'estado_tormenta_eta', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'estado_tormenta_eta', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
             var url_albergue = './albergues.geojson';
             map.addSource('albergues', {
                 type: 'geojson',
@@ -660,6 +740,23 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            var leyenda_albergues = [['Albergues','#b42222']];
+            $.each(leyenda_albergues, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_albergues').append(registro);
+            })
+
+            map.on('mouseenter', 'albergues', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'albergues', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+//
+
             var url_unidades_salud = './unidades_salud.geojson';
             map.addSource('unidades_salud', {
                 type: 'geojson',
@@ -688,6 +785,21 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            var leyenda_unidades_salud = [['Unidades de Salud','#1b8000']];
+            $.each(leyenda_unidades_salud, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_unidades_salud').append(registro);
+            })
+
+            map.on('mouseenter', 'unidades_salud', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'unidades_salud', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
             var url_eta_iota_afectaciones_infraestructura = './eta_iota_afectaciones_infraestructura.geojson';
             map.addSource('eta_iota_afectaciones_infraestructura', {
                 type: 'geojson',
@@ -717,6 +829,23 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            var leyenda_eta_iota_afectaciones_infraestructura = [['Afectaciones en Infraestructura','#483d8b']];
+            $.each(leyenda_eta_iota_afectaciones_infraestructura, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_eta_iota_afectaciones_infraestructura').append(registro);
+            })
+
+            map.on('mouseenter', 'eta_iota_afectaciones_infraestructura', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'eta_iota_afectaciones_infraestructura', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+//
+
             var url_afectaciones_vial_investh = './afectaciones_vial_investh.geojson';
             map.addSource('afectaciones_vial_investh', {
                 type: 'geojson',
@@ -724,8 +853,8 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
             });
 
             map.on('click', 'afectaciones_vial_investh', function (e) {
-                var evento = e.features[0].properties.nombre;
-                var innerPopup = '<div>'+ '<h6 style="text-align: center;"><b>Información</b></h6>' + '<br><b>Evento: </b> ' + evento + '</div>';
+                var evento = e.features[0].properties.name;
+                var innerPopup = '<div>'+ '<h6 style="text-align: center;"><b>Información</b></h6>' + '<b>Evento: </b> ' + evento + '</div>';
                 new mapboxgl.Popup()
                     .setLngLat(e.lngLat)
                     .setHTML(innerPopup)
@@ -744,6 +873,23 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     'circle-color': 'darkslateblue'
                 }
             });
+
+            var leyenda_afectaciones_vial_investh = [['Afectaciones en Infraestructura Vial','#483d8b']];
+            $.each(leyenda_afectaciones_vial_investh, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_afectaciones_vial_investh').append(registro);
+            })
+
+            map.on('mouseenter', 'afectaciones_vial_investh', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'afectaciones_vial_investh', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+//
 
             var url_establecimientos_educativos = './establecimientos_educativos.geojson';
             map.addSource('establecimientos_educativos', {
@@ -774,11 +920,29 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     .addTo(map);
             });
 
+            var leyenda_establecimientos_educativos = [['Establecimientos Educativos','#fba502']];
+            $.each(leyenda_establecimientos_educativos, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_establecimientos_educativos').append(registro);
+            })
+
+            map.on('mouseenter', 'establecimientos_educativos', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'establecimientos_educativos', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+ //           
+
             var url_establecimientos_educativos_afectados = './escuelas_afectadas.geojson';
             map.addSource('establecimientos_educativos_afectados', {
                 type: 'geojson',
                 data: url_establecimientos_educativos_afectados
             });
+
             map.addLayer({
                 'id': 'establecimientos_educativos_afectados',
                 'type': 'circle',
@@ -792,15 +956,14 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
-<<<<<<< HEAD
-            var leyenda_establecimientos_educativos_afectados = [["Establecimientos educativos afectados",
+            var leyenda_establecimientos_educativos_afectados = [["Establecimientos Educativos Afectados",
                 "red"]];
 
             $.each(leyenda_establecimientos_educativos_afectados, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
                 $('#leyenda_establecimientos_educativos_afectados').append(registro);
             })
-=======
+
             map.on('click', 'establecimientos_educativos_afectados', function (e) {
                 var nombre = e.features[0].properties.nombre;
                 var telefono = e.features[0].properties.movil;
@@ -811,8 +974,16 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     .setHTML(innerPopup)
                     .addTo(map);
             });
->>>>>>> 5551eca6e568546a0a31b77784ea70691bec370b
 
+            map.on('mouseenter', 'establecimientos_educativos_afectados', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'establecimientos_educativos_afectados', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
             var url_albergues_afectados = './albergues_afectados.geojson';
             map.addSource('albergues_afectados', {
                 type: 'geojson',
@@ -854,6 +1025,23 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                     .addTo(map);
             });
 
+            var leyenda_albergues_afectados = [['Albergues Afectados','#1b8000']];
+            $.each(leyenda_albergues_afectados, function (i, record) {
+                var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
+                $('#leyenda_albergues_afectados').append(registro);
+            })
+
+            map.on('mouseenter', 'albergues_afectados', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'albergues_afectados', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+//
+
             var url_sistemas_agua = './sistemas_agua.geojson';
             map.addSource('sistemas_agua', {
                 type: 'geojson',
@@ -889,6 +1077,17 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 $('#leyenda_sistemas_agua').append(registro);
             })
 
+            map.on('mouseenter', 'sistemas_agua', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'sistemas_agua', function () {
+                map.getCanvas().style.cursor = '';
+            });
+
+    //
+
             var url_sistemas_residuos = './sistemas_residuos.geojson';
             map.addSource('sistemas_residuos', {
                 type: 'geojson',
@@ -918,11 +1117,22 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
-            var leyenda_sistemas_residuos = [['Sistema de residuos','peru']];
+            var leyenda_sistemas_residuos = [['Sistema de Residuos','peru']];
             $.each(leyenda_sistemas_residuos, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
                 $('#leyenda_sistemas_residuos').append(registro);
             })
+
+            map.on('mouseenter', 'sistemas_residuos', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'sistemas_residuos', function () {
+                map.getCanvas().style.cursor = '';
+            });
+    
+//
 
             var url_cobertura_inundada_agricultura = './cobertura_inundada_agricultura.geojson';
             map.addSource('cobertura_inundada_agricultura', {
@@ -949,7 +1159,6 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
                 $('#leyenda_cobertura_inundada_agricultura').append(registro);
             })
-
 
             map.addLayer({
                 'id': 'cobertura_inundada_agricultura',
@@ -981,7 +1190,24 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('click', 'cobertura_inundada_agricultura', function (e) {
+                var cultivo = e.features[0].properties.Class_Name;
+                var innerPopup = '<div>'+ '<h6 style="text-align: center;"><b>Información</b></h6>' +'<b>Tipo de Cultivo:</b>' + cultivo +'</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
 
+            map.on('mouseenter', 'cobertura_inundada_agricultura', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'cobertura_inundada_agricultura', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
             var url_cobertura_inundada_medioambiente = './cobertura_inundada_medioambiente.geojson';
             map.addSource('cobertura_inundada_medioambiente', {
                 type: 'geojson',
@@ -1016,7 +1242,6 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 "#a3ce59"],
             ["Vegetación Secundaria Húmeda",
                 "#62eb76"]];
-
 
             $.each(leyenda_cobertura_inundada_medioambiente, function (i, record) {
                 var registro = $('<div class="col-2"><span style="background-color: ' + record[1] + ';border-radius: 10%;display: inline-block;height: 10px;width: 10px;z-index: 1;padding-left: 5px;"></span></div><div class="col-10">' + record[0] + '</div>');
@@ -1067,6 +1292,26 @@ en un país en desarrollo después de un desastre. </br></br><a href="http://doc
                 }
             });
 
+            map.on('click', 'cobertura_inundada_medioambiente', function (e) {
+                var cultivo = e.features[0].properties.Class_Name;
+                var area = e.features[0].properties.Area_m2;
+                var sensor = e.features[0].properties.Sensor_ID;
+                var innerPopup = '<div>'+ '<h6 style="text-align: center;"><b>Información</b></h6>' +'<b>Tipo de Cultivo:</b>' + cultivo + '<br><b>Área (m2): </b> ' + area +'<br><b>Sensor Utilizado: </b> ' + sensor +'</div>';
+                new mapboxgl.Popup()
+                    .setLngLat(e.lngLat)
+                    .setHTML(innerPopup)
+                    .addTo(map);
+            });
+
+            map.on('mouseenter', 'cobertura_inundada_medioambiente', function () {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'cobertura_inundada_medioambiente', function () {
+                map.getCanvas().style.cursor = '';
+            });
+//
             $("#icono_info").click (function(){
             $("#info").show();
         });
